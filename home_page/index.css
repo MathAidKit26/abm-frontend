@@ -1,0 +1,115 @@
+.container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  height: 100vh;
+  width: 62vw;
+  margin: auto;
+}
+
+.container p{
+  font-size: clamp(14px,5vw,40px);
+  text-align: center;
+  margin: 1% 0;
+  line-height: 166%;
+
+  font-weight: bold;
+
+  text-shadow:
+/* Full 0.2em Outer Ring */
+  0.2em 0 0 var(--color-ink),
+  -0.2em 0 0 var(--color-ink),
+  0 0.2em 0 var(--color-ink),
+  0 -0.2em 0 var(--color-ink),
+  0.2em 0.2em 0 var(--color-ink),
+  -0.2em 0.2em 0 var(--color-ink),
+  0.2em -0.2em 0 var(--color-ink),
+  -0.2em -0.2em 0 var(--color-ink),
+
+  /* Intermediate Outer Points */
+  0.1em 0.2em 0 var(--color-ink),
+  -0.1em 0.2em 0 var(--color-ink),
+  0.1em -0.2em 0 var(--color-ink),
+  -0.1em -0.2em 0 var(--color-ink),
+  0.2em 0.1em 0 var(--color-ink),
+  -0.2em 0.1em 0 var(--color-ink),
+  0.2em -0.1em 0 var(--color-ink),
+  -0.2em -0.1em 0 var(--color-ink),
+
+  /* Inner Ring (Fills gaps caused by 0.2em thickness) */
+  0.1em 0 0 var(--color-ink),
+  -0.1em 0 0 var(--color-ink),
+  0 0.1em 0 var(--color-ink),
+  0 -0.1em 0 var(--color-ink),
+  0.1em 0.1em 0 var(--color-ink),
+  -0.1em 0.1em 0 var(--color-ink),
+  0.1em -0.1em 0 var(--color-ink),
+  -0.1em -0.1em 0 var(--color-ink);
+}
+
+.container button{
+  width: clamp(160px, 20vw, 260px); 
+  aspect-ratio: 3 / 1;
+  margin: 5% auto 0 auto;
+
+  background-image: url("../assets/start\ button.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+
+  border: none;
+  cursor: pointer;
+}
+
+.container button:hover {
+  width: clamp(160px, 20vw, 260px); 
+  aspect-ratio: 3 / 1;
+  margin: 5% auto 0 auto;
+  background-image: url("../assets/start button selected.png");
+
+  transition: all 0.04s;
+}
+
+.container button:active{
+  scale: 0.9;
+}
+
+.background{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.background img{
+  position: absolute;
+}
+
+.f_cloud{
+  width: 100vw;
+}
+
+.s_cloud{
+  width: 80vw;
+  top: 20vh;
+
+  padding: 0 10vw;
+}
+
+.flag{
+  width:26vw ;
+  bottom: 0;
+}
+
+.klcc{
+  width:26vw ;
+  bottom: 0;
+  right: 4vw;
+}
