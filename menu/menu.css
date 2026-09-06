@@ -1,0 +1,52 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 auto;
+  width:50vw;
+  height: 100vh;
+}
+
+/* mobile */
+@media (max-aspect-ratio: 1/1) {
+  .container a{
+    width: clamp(200px, 20vh, 400px); 
+  }
+}
+
+/* tablet */
+@media (min-aspect-ratio: 1/1) and (max-aspect-ratio: 1.4/1) {
+  .container a{
+    width: clamp(200px, 30vw, 400px); 
+  }
+}
+
+/* pc */
+@media (min-aspect-ratio: 1.4/1) {
+  .container a{
+    width: clamp(200px, 30vw, 400px); 
+  }
+}
+
+.container a{
+  aspect-ratio: 3 / 1;
+  background-size: contain;
+  
+  margin: 5vh 0;
+
+  cursor: pointer;
+}
+
+.games{
+  background-image: url(../assets/games.png);
+}
+
+.notes{
+  background-image: url(../assets/notes.png);
+}
+
+.workspace{
+  background-image: url(../assets/workspace.png);
+}
