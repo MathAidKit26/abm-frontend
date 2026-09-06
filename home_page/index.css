@@ -10,7 +10,7 @@
   align-items: center;
   flex-direction: column;
 
-  height: 100vh;
+  height: 100dvh;
   width: 62vw;
   margin: auto;
 }
@@ -85,7 +85,7 @@
 .background{
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
 }
 
 .background img{
@@ -112,4 +112,33 @@
   width:26vw ;
   bottom: 0;
   right: 4vw;
+}
+
+/* mobile */
+@media (max-aspect-ratio: 1/1) {
+  .s_cloud{
+    top: 10vh; 
+  }
+
+  .flag{
+  width:20vh ;
+  }
+
+  .klcc{
+  width:20vh ;
+  }
+}
+
+/* tablet */
+@media (min-aspect-ratio: 1/1) and (max-aspect-ratio: 1.4/1) {
+  .s_cloud{
+    top: 20vh; 
+  }
+}
+
+/* pc */
+@media (min-aspect-ratio: 1.4/1) {
+  .s_cloud{
+    top: 20vh; 
+  }
 }
