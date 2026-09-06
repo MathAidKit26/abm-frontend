@@ -55,7 +55,7 @@
   -0.1em -0.1em 0 var(--color-ink);
 }
 
-.container button{
+.container a{
   width: clamp(160px, 20vw, 260px); 
   aspect-ratio: 3 / 1;
   margin: 5% auto 0 auto;
@@ -69,7 +69,7 @@
   cursor: pointer;
 }
 
-.container button:hover {
+.container a:hover {
   width: clamp(160px, 20vw, 260px); 
   aspect-ratio: 3 / 1;
   margin: 5% auto 0 auto;
@@ -78,7 +78,7 @@
   transition: all 0.04s;
 }
 
-.container button:active{
+.container a:active{
   scale: 0.9;
 }
 
