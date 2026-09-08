@@ -1,0 +1,133 @@
+.grass-container {
+  width: 100vw;
+  height: 12dvh;
+  background-image: url('../assets/grass.png');
+  background-size: auto 100%;
+  position: fixed;
+  bottom: -1dvh;
+  z-index: 10;
+}
+
+.mountain{
+  position: fixed;
+  bottom: 0;
+  height: 40vh;
+  bottom: 0;
+  left: 0;
+}
+
+.tiger{
+  position: fixed;
+  bottom: 0;
+  height: 30vh;
+  bottom: 0;
+  right: 0;
+  z-index: 11;
+}
+
+.monkey{
+  position: fixed;
+  bottom: 0;
+  height: 40vh;
+  top: 0;
+  right: 0;
+  z-index: 11;
+}
+
+.bird{
+  position: fixed;
+  bottom: 0;
+  height: 40vh;
+  top: 6vh;
+  left: 0;
+  z-index: 11;
+}
+
+.cloud{
+  position: fixed;
+  bottom: 0;
+  height: 20vh;
+  top: 0;
+  left: -6vw;
+  z-index: 10;
+}
+
+.page{
+  height: 100dvh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 100000;
+}
+
+.page h1{
+  font-size: clamp(14px,5vw,100px);
+  margin-top: -8vw;
+  color: #fdde5f;
+
+  text-shadow:
+  /* Outer Ring */
+  0.1em 0 0 #004764,
+  -0.1em 0 0 #004764,
+  0 0.1em 0 #004764,
+  0 -0.1em 0 #004764,
+  0.1em 0.1em 0 #004764,
+  -0.1em 0.1em 0 #004764,
+  0.1em -0.1em 0 #004764,
+  -0.1em -0.1em 0 #004764,
+
+  /* Intermediate Points */
+  0.05em 0.1em 0 #004764,
+  -0.05em 0.1em 0 #004764,
+  0.05em -0.1em 0 #004764,
+  -0.05em -0.1em 0 #004764,
+  0.1em 0.05em 0 #004764,
+  -0.1em 0.05em 0 #004764,
+  0.1em -0.05em 0 #004764,
+  -0.1em -0.05em 0 #004764,
+
+  /* Inner Ring */
+  0.05em 0 0 #004764,
+  -0.05em 0 0 #004764,
+  0 0.05em 0 #004764,
+  0 -0.05em 0 #004764,
+  0.05em 0.05em 0 #004764,
+  -0.05em 0.05em 0 #004764,
+  0.05em -0.05em 0 #004764,
+  -0.05em -0.05em 0 #004764;
+}
+
+/* mobile */
+@media (max-aspect-ratio: 1/1) {
+  .mountain{
+    height: 40vw;
+  }
+
+  .tiger{
+    height: 30vw;
+    right: -10vw;
+  }
+
+  .monkey{
+    height: 50vw;
+  }
+
+  .bird{
+    height: 40vw;
+    top: 46vh;
+  }
+
+  .cloud{
+    height: 20vw;
+  }
+}
+
+/* tablet */
+@media (min-aspect-ratio: 1/1) and (max-aspect-ratio: 1.4/1) {
+  .tiger{
+    right: -9vw;
+  }
+}
