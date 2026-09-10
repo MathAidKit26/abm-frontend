@@ -1,0 +1,598 @@
+:root {
+  --ink: #15253a;
+  --paper: #f8edcf;
+  --cream: #fff9e9;
+  --yellow: #f9c630;
+  --pink: #fa7d91;
+  --blue: #4db3cf;
+  --green: #74b684;
+  --purple: #7963aa;
+  --line: #243e59;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: VT323, monospace;
+  font-size: 22px;
+}
+
+.app-shell {
+  overflow: hidden;
+}
+
+/* Lab Section */
+
+.lab-section {
+  padding: 90px max(5vw, 28px);
+  background: #f0dfb6;
+}
+
+.lab-grid {
+  max-width: 1260px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 330px 1fr;
+  border: 5px solid var(--ink);
+  box-shadow: 10px 10px 0 var(--ink);
+  background: var(--ink);
+}
+
+/* Control Panel */
+
+.control-panel {
+  padding: 22px;
+  background: #fff3d8;
+  border-right: 5px solid var(--ink);
+}
+
+.panel-title {
+  font: 12px "Press Start 2P", monospace;
+  margin: 0 0 13px;
+}
+
+.panel-title:not(:first-child) {
+  margin-top: 29px;
+}
+
+.panel-title span {
+  display: inline-grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  background: var(--pink);
+  border: 2px solid var(--ink);
+  margin-right: 7px;
+}
+
+/* Upload */
+
+.upload-box {
+  height: 105px;
+  border: 3px dashed var(--ink);
+  background: #f9e399;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.upload-box:hover {
+  background: var(--yellow);
+}
+
+.upload-icon {
+  font-size: 32px;
+  line-height: 0.65;
+}
+
+.upload-box strong {
+  font: 13px "Press Start 2P", monospace;
+  margin-top: 8px;
+}
+
+.upload-box small {
+  font-size: 17px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+/* Buttons */
+
+.button {
+  border: 3px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--ink);
+  font: 12px "Press Start 2P", monospace;
+  cursor: pointer;
+  padding: 17px 15px;
+  display: inline-block;
+}
+
+.demo-button,
+.reset-button {
+  width: 100%;
+  border: 0;
+  background: none;
+  font: 18px VT323, monospace;
+  cursor: pointer;
+  color: var(--ink);
+  text-decoration: underline;
+  margin-top: 7px;
+}
+
+.apply {
+  width: 100%;
+  margin-top: 12px;
+  background: var(--green);
+  color: var(--ink);
+  padding: 15px 7px;
+}
+
+.apply:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.reset-button {
+  margin-top: 15px;
+}
+
+/* Object Position */
+
+.object-position {
+  margin-bottom: 4px;
+}
+
+.field-row {
+  display: flex;
+  gap: 8px;
+}
+
+.field-row label {
+  flex: 1;
+  min-width: 0;
+}
+
+.field-label {
+  display: block;
+  font: 17px VT323, monospace;
+  margin: 6px 0 2px;
+}
+
+.control-field {
+  width: 100%;
+  border: 3px solid var(--ink);
+  background: #fffdf2;
+  font: 22px VT323, monospace;
+  padding: 7px;
+}
+
+/* Transformation Tools */
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.tool {
+  min-height: 71px;
+  border: 3px solid var(--ink);
+  background: #fff9e9;
+  font: 11px "Press Start 2P", monospace;
+  cursor: pointer;
+  text-align: left;
+  padding: 9px;
+}
+
+.tool b {
+  display: block;
+  font: 29px VT323, monospace;
+  line-height: 18px;
+}
+
+.tool.active {
+  background: var(--yellow);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+/* Rule Controls */
+
+.rule-controls {
+  min-height: 72px;
+}
+
+/* Canvas Panel */
+
+.canvas-panel {
+  background: #fff9e9;
+  min-width: 0;
+}
+
+.canvas-header,
+.canvas-footer {
+  min-height: 45px;
+  padding: 12px 15px;
+  background: var(--ink);
+  color: #fff4d6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font: 10px "Press Start 2P", monospace;
+}
+
+.canvas-footer {
+  background: var(--yellow);
+  color: var(--ink);
+  border-top: 4px solid var(--ink);
+}
+
+.legend {
+  font-size: 8px;
+}
+
+.legend i {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin: 0 5px 0 10px;
+}
+
+.original-dot {
+  background: var(--pink);
+}
+
+.new-dot {
+  background: var(--blue);
+}
+
+/* Canvas */
+
+.canvas-wrap {
+  height: 570px;
+  position: relative;
+  background: #fffdf4;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.empty-message {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  color: #71828b;
+  font: 14px / 1.7 "Press Start 2P", monospace;
+  pointer-events: none;
+}
+
+/* History */
+
+.history-panel {
+  padding: 16px 18px;
+  background: #fff3d8;
+  border-top: 4px solid var(--ink);
+}
+
+.history-title {
+  display: flex;
+  justify-content: space-between;
+  font: 11px "Press Start 2P", monospace;
+}
+
+.history-title span {
+  color: #d45c72;
+  font-size: 9px;
+}
+
+#historyList {
+  margin: 12px 0 0;
+  padding-left: 30px;
+  max-height: 155px;
+  overflow: auto;
+}
+
+.history-empty {
+  list-style: none;
+  margin-left: -30px;
+  color: #71828b;
+}
+
+.history-panel li {
+  padding: 4px 0;
+  border-bottom: 1px dashed #bcac88;
+  font-size: 19px;
+}
+
+/* Responsive */
+
+@media (max-width: 820px) {
+  .lab-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .control-panel {
+    border-right: 0;
+    border-bottom: 5px solid var(--ink);
+  }
+
+  .canvas-wrap {
+    height: 440px;
+  }
+
+  .canvas-header,
+  .canvas-footer {
+    font-size: 8px;
+  }
+
+  .legend {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .lab-section {
+    padding: 60px 18px;
+  }
+
+  .canvas-wrap {
+    height: 360px;
+  }
+
+  .canvas-footer span:last-child {
+    display: none;
+  }
+}
+
+:root {
+  --ink: #142b4f;
+  --paper: #f3efe7;
+  --cream: #fbfaf6;
+  --yellow: #e5ba4c;
+  --pink: #ba4d57;
+  --blue: #477fa3;
+  --green: #587f6c;
+  --purple: #53678b;
+}
+
+body {
+  background: #e9e5dc;
+}
+
+.app-shell {
+  background: #f3efe7;
+  max-width: 1500px;
+  margin: auto;
+  box-shadow: 0 0 30px #142b4f22;
+}
+
+.merdeka-banner {
+  min-height: 105px;
+  padding: 19px 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: #142b4f;
+  color: #fff;
+  border-bottom: 5px solid #e5ba4c;
+  position: relative;
+  overflow: hidden;
+}
+
+.merdeka-banner:after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 auto;
+  width: 32%;
+  height: 6px;
+  background: linear-gradient(90deg, #ba4d57 0 50%, #f8f5ed 50%);
+}
+
+.merdeka-banner p {
+  font: 11px 'Press Start 2P', monospace;
+  color: #e5ba4c;
+  margin: 0 0 10px;
+}
+
+.merdeka-banner h1 {
+  font: clamp(20px, 3vw, 36px) / 1.15 'Press Start 2P', monospace;
+  margin: 0;
+  letter-spacing: -2px;
+}
+
+.jalur-gemilang {
+  width: 82px;
+  height: 54px;
+  flex: none;
+  background: repeating-linear-gradient(
+    0deg,
+    #ba4d57 0 5px,
+    #fffaf1 5px 10px
+  );
+  border: 3px solid #e5ba4c;
+  position: relative;
+  box-shadow: 4px 4px 0 #071a3a;
+}
+
+.jalur-gemilang:before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 40px;
+  background: #184875;
+}
+
+.moon,
+.flag-star {
+  position: absolute;
+  z-index: 1;
+  color: #e5ba4c;
+}
+
+.moon {
+  font: 37px / 1 serif;
+  left: 3px;
+  top: 4px;
+}
+
+.flag-star {
+  left: 27px;
+  top: 16px;
+  font-size: 17px;
+}
+
+.banner-star {
+  font-size: 48px;
+  color: #d6dee7;
+  line-height: 1;
+}
+
+.merdeka-ribbon {
+  min-height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  padding: 9px;
+  background: repeating-linear-gradient(
+    90deg,
+    #ba4d57 0 35px,
+    #fffaf1 35px 70px
+  );
+  border-bottom: 3px solid #142b4f;
+  color: #142b4f;
+  font: 9px 'Press Start 2P', monospace;
+  text-shadow: 1px 1px #fff;
+}
+
+.merdeka-ribbon b {
+  color: #e5ba4c;
+  font-size: 17px;
+  text-shadow: none;
+}
+
+.lab-section {
+  background: #f3efe7;
+}
+
+.eyebrow {
+  color: #a3414c;
+}
+
+.section-heading h2 {
+  color: #142b4f;
+}
+
+.panel-title span {
+  background: #ba4d57;
+  color: #fff;
+}
+
+.tool.active,
+.canvas-footer {
+  background: #e5ba4c;
+}
+
+.apply {
+  background: #ba4d57;
+  color: #fff;
+}
+
+.upload-box {
+  background: #edf2f2;
+}
+
+.upload-box:hover {
+  background: #f3e2b2;
+}
+
+.canvas-header {
+  background: #142b4f;
+}
+
+.history-panel {
+  background: #fbfaf6;
+}
+
+.history-title span {
+  color: #a3414c;
+}
+
+.guide-section {
+  background: #fbfaf6;
+}
+
+footer {
+  background: #142b4f;
+}
+
+.original-dot {
+  background: #ba4d57;
+}
+
+.previous-dot {
+  background: #e5ba4c;
+}
+
+.new-dot {
+  background: #477fa3;
+}
+
+.primary {
+  background: #e5ba4c;
+}
+
+@media (max-width: 700px) {
+  .merdeka-banner {
+    justify-content: flex-start;
+    padding: 17px 20px;
+  }
+
+  .merdeka-banner > div:nth-child(2) {
+    min-width: 0;
+  }
+
+  .merdeka-banner h1 {
+    font-size: clamp(15px, 4vw, 21px);
+    white-space: normal;
+    letter-spacing: -1px;
+  }
+
+  .merdeka-banner p {
+    font-size: 8px;
+  }
+
+  .jalur-gemilang {
+    width: 59px;
+    height: 40px;
+  }
+
+  .banner-star {
+    display: none;
+  }
+
+  .merdeka-ribbon {
+    font-size: 7px;
+    gap: 9px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .merdeka-banner:after {
+    display: none;
+  }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transform Lab — Form 5 Chapter 5</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="workspace.css" />
+</head>
+<body>
+  <main class="app-shell">
+
+    <section class="lab-section" id="lab">
+      <div class="lab-grid">
+        <aside class="control-panel">
+          <div class="panel-title"><span>01</span> ADD YOUR IMAGE</div>
+          <label class="upload-box" for="imageUpload"><span class="upload-icon">↑</span><strong>UPLOAD IMAGE</strong><small>PNG, JPG or WEBP</small></label>
+          <input id="imageUpload" type="file" accept="image/*" />
+          <button class="demo-button" id="demoButton">USE DEMO SHAPE</button>
+
+          <div class="panel-title"><span>02</span> PLACE YOUR OBJECT</div>
+          <div class="field-row object-position"><label><span class="field-label">x-coordinate</span><input class="control-field" id="objectX" type="number" value="0"></label><label><span class="field-label">y-coordinate</span><input class="control-field" id="objectY" type="number" value="0"></label></div>
+
+          <div class="panel-title"><span>03</span> PICK A TRANSFORMATION</div>
+          <div class="tool-grid" role="radiogroup" aria-label="Transformation type">
+            <button class="tool active" data-tool="enlargement" role="radio" aria-checked="true"><b>↗</b> ENLARGE</button>
+            <button class="tool" data-tool="reflection" role="radio" aria-checked="false"><b>↔</b> REFLECT</button>
+            <button class="tool" data-tool="rotation" role="radio" aria-checked="false"><b>↻</b> ROTATE</button>
+            <button class="tool" data-tool="translation" role="radio" aria-checked="false"><b>→</b> TRANSLATE</button>
+          </div>
+
+          <div class="panel-title"><span>04</span> SET THE RULE</div>
+          <div class="rule-controls" id="ruleControls"></div>
+          <button class="button apply" id="applyButton">APPLY TRANSFORMATION</button>
+          <button class="reset-button" id="resetButton">↺ RESET WORKSPACE</button>
+        </aside>
+
+        <div class="canvas-panel">
+          <div class="canvas-header"><span>COORDINATE GRID</span><span class="legend"><i class="original-dot"></i> ORIGINAL <i class="previous-dot"></i> PREVIOUS <i class="new-dot"></i> PREVIEW</span></div>
+          <div class="canvas-wrap"><canvas id="transformCanvas" width="900" height="640" aria-label="Coordinate plane transformation workspace"></canvas><div class="empty-message" id="emptyMessage">UPLOAD AN IMAGE<br>OR TRY THE DEMO SHAPE</div></div>
+          <div class="canvas-footer"><span id="ruleReadout">ENLARGEMENT, SCALE FACTOR 2</span><span>ORIGIN: (0, 0)</span></div>
+          <div class="history-panel">
+            <div class="history-title">APPLIED STEPS <span id="historyCount">0 STEPS</span></div>
+            <ol id="historyList"><li class="history-empty">Your applied transformations will appear here.</li></ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <script src="workspace.js"></script>
+</body>
+</html>
