@@ -8,6 +8,10 @@
   height: 19vw;
 }
 
+#defi{
+  margin-top: -8vw;
+}
+
 .card {
   perspective:1000px;
 }

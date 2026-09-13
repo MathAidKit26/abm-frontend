@@ -1,0 +1,23 @@
+.note{
+  height: 45dvh;
+  width: 60vw;
+  background-image: url(../assets/map.png);
+  background-size: 100% 100%;
+  padding: 8% 13%;
+  line-height: 4vh;
+  font-size: clamp(10px,2.6vh,40px);
+}
+
+/* mobile */
+@media (max-aspect-ratio: 1/1) {
+  .note{
+    padding: 20% 13%;
+    font-size: clamp(10px,3vw,40px);
+    line-height: 4vw;
+  }
+}
+
+/* tablet */
+@media (min-aspect-ratio: 1/1) and (max-aspect-ratio: 1.4/1) {
+
+}
