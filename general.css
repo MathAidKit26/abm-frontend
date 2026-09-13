@@ -10,6 +10,12 @@ body{
   font-family: "Press Start 2P";
 }
 
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+
 :root {
     /* ───────────── Grayscale / Neutral ───────────── */
     --color-ink: #2e222f;
