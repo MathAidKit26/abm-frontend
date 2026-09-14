@@ -22,6 +22,19 @@ body {
   font-size: 22px;
 }
 
+.return{
+  display: block;
+  position: fixed;
+  background-image: url(../assets/return.png);
+  background-size: cover;
+  margin: 2dvh;
+  height: 10dvh;
+  aspect-ratio: 1/1;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+}
+
 .app-shell {
   overflow: hidden;
 }
